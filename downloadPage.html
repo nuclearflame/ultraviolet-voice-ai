@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="./logo.jpg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ultraviolet Voice AI - Thanks for Downloading!</title>
+     
+    <style>
+
+
+        .nav{
+            position: fixed;
+            background-color: rgb(26, 26, 26);
+            margin-left: -8px;
+            height: 50px;
+            width: 100%;
+            margin-top: -27px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgb(55, 55, 55);
+            z-index: 2;
+        }
+
+
+        .break{
+            margin-left: -18px;
+            height: 50px;
+            width: 100%;
+            margin-top: -27px;
+            margin-bottom: 20px;
+        }
+
+        .nav a{
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 20px;
+            float: left;  
+            display: block;
+            transition-duration: 0.4s;
+        }
+
+        .nav a:hover{
+            background-color: rgb(80,80,80);
+            border-bottom: 1px solid white;
+        }
+
+        .signInButton{
+            background-color: darkviolet;
+            float: right;
+            color: whitesmoke;
+            font-size: 20px;
+            padding: 12.5px 20px;
+            border: 0px solid white;
+            background-size: 110%;
+            background-position: center center;
+            height: 30px;
+            width: 150px;
+            margin-right: 5px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border:1px solid white;
+            text-decoration: none;
+            line-height: 0px;
+        }
+
+
+
+        .logoClass{
+            background: url(https://live.staticflickr.com/65535/52679905479_285fb1e0ba_z.jpg);
+            background-size: 110%;
+            background-position: center center;
+            height: 22px;
+            width: 90px;
+
+        }
+
+        .titleSign{
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            margin-top: 100px;
+            margin-bottom: 20px;
+        }
+
+        .fileSign{
+            text-align: center;
+            color: white;
+            font-size: 15px;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-bottom: 50px;
+        }
+
+        .downloadSign{
+            background-color: #510074;
+            color: white;
+            height: 50px;
+            width: 200px;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25px;
+            margin:auto;
+            cursor: pointer;
+            display: block;
+            border: none;
+            margin-bottom: 50px;
+        }
+        .downloadSign:hover{
+            background-color: darkviolet;
+        }
+
+        .homepageLink{
+            text-align: center;
+            color: darkviolet;
+            font-size: 15px;
+            cursor: pointer;
+            margin-bottom: 50px;
+            display: block;
+        }
+
+
+    </style>
+
+</head>
+
+<body style="background-color: rgb(3, 3, 3);">
+
+
+
+
+    <div class="titleSign">Thanks for Downloading</div>
+
+    <div class="fileSign">www.ultravioletvoiceai.com</div>
+
+    <a href="https://ultravioletvoiceai.com" class="homepageLink"> &lt;&ltCreate Another Audio File</a>
+
+    <br/><br/><br/><br/>
+
+    <script>
+
+    var button = document.getElementById("postButton");
+    button.onclick = postbuttonClicked;
+    function postbuttonClicked() {
+        button.textContent="Creating..."
+        button.style.backgroundColor = "purple";
+    }
+
+
+    var signinbutton = document.getElementById("signInBtn");
+    signinbutton.onclick = signinbuttonClicked;
+    function signinbuttonClicked() {
+          window.location.href = "https://example.com";
+    }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="./logo.jpg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ultraviolet Voice AI - Text To Speech</title>
+
+    <style>
+
+
+        .nav{
+            position: fixed;
+            background-color: rgb(26, 26, 26);
+            margin-left: -8px;
+            height: 50px;
+            width: 100%;
+            margin-top: -27px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgb(55, 55, 55);
+            z-index: 2;
+        }
+
+
+        .break{
+            margin-left: -18px;
+            height: 50px;
+            width: 100%;
+            margin-top: -27px;
+            margin-bottom: 20px;
+        }
+
+        .nav a{
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 20px;
+            float: left;  
+            display: block;
+            transition-duration: 0.4s;
+        }
+
+        .nav a:hover{
+            background-color: rgb(80,80,80);
+            border-bottom: 1px solid white;
+        }
+
+        .signInButton{
+            background-color: darkviolet;
+            float: right;
+            color: whitesmoke;
+            font-size: 20px;
+            padding: 12.5px 20px;
+            border: 0px solid white;
+            background-size: 110%;
+            background-position: center center;
+            height: 30px;
+            width: 150px;
+            margin-right: 5px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border:1px solid white;
+            text-decoration: none;
+            line-height: 0px;
+        }
+
+
+        .logoClass{
+            background: url(https://live.staticflickr.com/65535/52679905479_285fb1e0ba_z.jpg);
+            background-size: 110%;
+            background-position: center center;
+            height: 22px;
+            width: 90px;
+
+        }
+
+        .createSign{
+            width: 80%;
+            height: 60px;
+            margin-left: 100px;
+            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-align: left;
+            color: white;
+            font-size: 20px;
+            line-height: 64px;
+            border-bottom: 1px solid rgb(55, 55, 55);
+        }
+
+        .postBox{
+            margin-left: 100px;
+            width: 1000px;
+            background-color: rgb(50, 50, 50);
+            text-align: left;
+            border: 2px solid #510074;;
+            border-radius: 10px;
+            margin-top: 25px;
+            padding-top: 10px;
+        }
+
+        .postType{
+            margin-left: 100px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            width: 300px;
+            height: 30px;
+            border: 1px solid white;
+            background-color: rgb(26, 26, 26);
+            color:white;
+        }
+
+        .inputBox{
+            width: 800px;
+            height: 200px;
+            border: 1px solid white;
+            background-color: rgb(26, 26, 26);
+            color:white;
+            font-size: 20px;
+            margin-left: 100px;
+            margin-top:10px;
+            line-height: 30px;
+            resize: none;
+
+        }
+
+        .postButton{
+            width: 100px;
+            height: 25px;
+            margin-left: 100px;
+            margin-top:10px;
+            margin-bottom: 10px;
+            color:white;
+            font-size: 15px;
+            background-color: #510074;
+            transition-duration: 0.2s;
+            border: 0.5px solid white;
+            border-radius: 10px;
+        }
+
+        .postButton:hover{
+            background-color: purple;
+        }
+
+        .cancelButton{
+            width: 100px;
+            height: 25px;
+            margin-left: 10px;
+            margin-top:10px;
+            margin-bottom: 10px;
+            color:white;
+            font-size: 15px;
+            background-color: rgb(10, 10, 10);
+            transition-duration: 0.2s;
+            border: 0.5px solid white;
+            border-radius: 10px;
+        }
+
+        .cancelButton:hover{
+            background-color: rgb(30,30,30);
+        }
+        .selectSign{
+            margin-left: 100px;
+            color: white;
+        }
+        .charCount{
+            color: darkgrey;
+            margin-left: 100px;
+            margin-top: 0px;
+        }
+
+        .footer{  
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            color: white;
+}
+    </style>
+
+</head>
+
+<body style="background-color: rgb(3, 3, 3);">
+
+
+
+    <div class="createSign">
+    Ultraviolet Voice AI
+    </div>
+
+    <div class="postBox">
+        <div>
+    <label for="postTypeId" class="selectSign">Select Voice:</label>
+        </div>
+        <div>
+    <select class="postType" id="postTypeId" required>
+        <option value="pNInz6obpgDQGcFmaJgB" selected="selected">Regular AI Voice</option>
+        <option value="9XRIBmMFDIQIXIdF8xzr" >Donald Trump</option>
+        <option value="03A1djI1VlU6U1udsY8v" >Joe Biden</option>
+        <option value="8FojVeVzReT6Q9lgaiXx">Barack Obama</option>
+        <option value="irCEZpnJgR8gW7RkRCkR" >Andrew Tate</option>
+    </select>
+
+        </div>
+        <div>
+    <div>
+    <label for="inputBox" class="selectSign">Enter Text:</label>
+        </div>
+    <textarea id = "inputBox" class="inputBox" maxlength="140" name="Box" cols="40" rows="5"></textarea>
+    <p class="charCount"><span id="charCount">0</span>/140</p>
+        </div>
+        <div>
+    <button id = "postButton" class="postButton" type="button">Download</button>
+    <button id ="cancelButton" class="cancelButton">Clear</button>
+        </div>
+    </div>
+
+    <br/><br/>
+    <div class="footer">v. 1.0.0</div>
+
+    <script>
+
+//character counter 
+const textarea = document.getElementById("inputBox");
+const charCount = document.getElementById("charCount");
+
+textarea.addEventListener("input", function() {
+  const text = textarea.value;
+  charCount.textContent = text.length;
+});
+
+
+
+    var button1 = document.getElementById("cancelButton");
+    button1.onclick = clearbox;
+
+    function clearbox(){
+        document.getElementById("inputBox").value = "";
+    }
+
+
+    var button = document.getElementById("postButton");
+    button.onclick = postbuttonClicked;
+    function postbuttonClicked() {        
+        if(/^\s*$/.test(document.getElementById('inputBox').value)){
+            console.log("Error: only whitespace")
+        }
+        else{ 
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                generateAudio(document.getElementById('inputBox').value,document.getElementById('postTypeId').value);
+            }
+            else{
+            button.textContent="Creating..."
+            button.style.backgroundColor = "purple";
+            document.getElementById("postButton").disabled = true;
+            generateAudio(document.getElementById('inputBox').value,document.getElementById('postTypeId').value);
+            }
+        }
+    }
+    
+
+
+
+
+    
+
+
+
+const apiKey = '**********';//Enter Your Own API KEY Here
+
+// Function to make the API request and generate the audio file
+async function generateAudio(text,voiceId) {
+  const apiUrl = `https://api.elevenlabs.io/v1/text-to-speech/`+voiceId+'';
+  
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        //'Authorization': `Bearer ${apiKey}`,
+        'xi-api-key':'858227eb89ccd277d29a0b48896157c9'
+        //'Access-Control-Allow-Origin': '*', // Allow requests from any origin
+        //'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE', // Specify allowed methods
+        //'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Specify allowed headers
+      },
+      body: JSON.stringify({
+  "text": text,
+  "model_id": "eleven_monolingual_v1",
+  "voice_settings": {
+    "stability": 0,
+    "similarity_boost": 0
+  }
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('API request failed');
+    }
+
+const audioBlob = await response.blob();
+// Create a URL object from the audio blob
+const audioUrl = URL.createObjectURL(audioBlob);
+console.log(audioUrl);
+    // Do something with the audio URL, e.g., play it using an audio player or offer a download link
+
+  // Create a download link element
+  const downloadLink = document.createElement('a');
+  downloadLink.href = audioUrl;
+  downloadLink.download = 'audio.mp3'; // Set the desired file name
+
+  // Trigger the download automatically
+  downloadLink.click();
+
+  // Clean up the Blob URL and remove the download link from the DOM
+  URL.revokeObjectURL(audioUrl);
+  downloadLink.remove();
+
+
+    //send user to new page
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+    }
+    else{
+        window.location.href = "https://ultravioletvoiceai.com/thanks";
+    }
+}
+
+
+
+
+    </script>
+
+</body>
+</html>
